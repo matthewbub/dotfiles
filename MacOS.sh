@@ -25,3 +25,12 @@ brew install glow
 
 # git
 brew install git
+
+# bun 
+curl -fsSL https://bun.sh/install | bash
+
+# clone my dotfiles
+# git clone https://github.com/matthewbub/dotfiles.git ~/.config
+
+# opencode 
+brew install sst/tap/opencode

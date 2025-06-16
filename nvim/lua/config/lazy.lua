@@ -31,20 +31,14 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-	spec = {
-		-- plugings goes here
-	},
-	-- configure any otehr settings here. 
-	-- ...
-
-	-- colorscheme that will be used when installing plugins
-	-- TODO: build my own color scheme for install
+	require("plugins.blinkcmp"),
+	require("plugins.lazydev"),
+ 	require("plugins.mason"),
+	require("plugins.telescope"),
+	require("plugins.treesitter"),
 	install = {
 		colorscheme = { "habamax" }
 	},
-
-	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
-
 
