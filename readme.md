@@ -1,9 +1,30 @@
 # readme 
 
+## Cloning
 
-Scripts
+```sh
+cd ~/
+git clone https://github.com/matthewbub/dotfiles.git .config
+```
+
+
+## Scripts
+
 1. ./MacOS.sh - installs the core shit that i need on a Macbook
 2. ./MacOS_neovim.sh - installs packages used as dependecies in my neovim configuration. You can lauch neovim BEFORE running this script, and then do a `:checkhealth` to get a sense of what errors this script is aiming to solve. 
+
+## Manual Setup Steps (After running scripts)
+
+Modify your `~/.gitconfig` file to include the this git config associated with this repo 
+
+```text
+[user]
+    name = Your Name
+    email = your.email@example.com
+[include]
+    path = ~/.config/git/config
+```
+
 
 
 # NeoVim - good to knows
