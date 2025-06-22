@@ -49,6 +49,7 @@ return { -- Useful plugin to show you pending keybinds.
         { '<leader>g', group = '[G]it' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>l', group = '[L]SP' },
+        { '<leader>m', group = 'Harpoon [M]arks' },
         { ']c', desc = 'Next git change' },
         { '[c', desc = 'Previous git change' },
         { '<Esc>', desc = 'Clear search highlights' },
