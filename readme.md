@@ -41,6 +41,7 @@ https://github.com/nvim-lua/kickstart.nvim helped me get here today but whats fu
 - nvim-treesitter convert code to ASTs  
 - mason.nvim LSP manager that works on top of nvim-treesitter
 - which-key for keeping track of all these hotkeys 
+- neo-tree file explorer 
 
 ## Hotkeys
 

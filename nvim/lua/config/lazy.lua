@@ -40,6 +40,7 @@ require("lazy").setup({
 	require("plugins.which-key"),
 	require("plugins.mini-icons"),
 	require("plugins.web-dev-icons"),
+  require("plugins.neo-tree"),
   "NMAC427/guess-indent.nvim",
 	install = {
 		colorscheme = { "habamax" }
