@@ -48,6 +48,9 @@ return {
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
           map('<leader>ld', require('telescope.builtin').lsp_definitions, '[L]SP [D]efinition')
+          
+          -- Jump back from definition (alternative to <C-t>)
+          map('<leader>lb', '<C-t>', '[L]SP Jump [B]ack')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
