@@ -1,5 +1,6 @@
 # readme 
 
+
 ## Cloning
 
 ```sh
@@ -25,14 +26,20 @@ Modify your `~/.gitconfig` file to include the this git config associated with t
     path = ~/.config/git/config
 ```
 
-
-
-# NeoVim - good to knows
+# Neovim - good to knows
 
 hey if it's your first time working with vim, or you want a refresher on the basics, check out this post https://www.matthewbub.com/blog/vim-motions-a-generalists-guide
 
-`C-` = `Ctrl`
+### the setup 
 
+https://github.com/nvim-lua/kickstart.nvim helped me get here today but whats funny is i built this config from the ground up, tested several different plugins and ultimtely and organically landed on the same shit in kickstart 
+
+- lazy.vim as the package manager
+- blink.cmp for lsp completion menus
+- telescope.nvim for searching 
+- gitsigns.nvim for Git 
+- nvim-treesitter convert code to ASTs  
+- mason.nvim LSP manager that works on top of nvim-treesitter
 
 ## Hotkeys
 
