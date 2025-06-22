@@ -50,5 +50,11 @@ vim.o.cursorline = true
 -- minimal num of screen lines to keep above and below the curosr
 vim.o.scrolloff = 10 
 
+-- tab settings
+vim.opt.tabstop = 2
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
 -- clear highlights on search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

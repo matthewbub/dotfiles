@@ -40,6 +40,7 @@ https://github.com/nvim-lua/kickstart.nvim helped me get here today but whats fu
 - gitsigns.nvim for Git 
 - nvim-treesitter convert code to ASTs  
 - mason.nvim LSP manager that works on top of nvim-treesitter
+- which-key for keeping track of all these hotkeys 
 
 ## Hotkeys
 
