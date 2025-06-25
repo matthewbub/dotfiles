@@ -42,10 +42,10 @@ require("lazy").setup({
 	require("plugins.web-dev-icons"),
   require("plugins.neo-tree"),
   require("plugins.harpoon2"),
+  require("plugins.cyberdream"),
+  require("plugins.autopairs"),
+  require("plugins.bufferline"),
   "NMAC427/guess-indent.nvim",
-	install = {
-		colorscheme = { "habamax" }
-	},
 	checker = { enabled = true },
 })
 
