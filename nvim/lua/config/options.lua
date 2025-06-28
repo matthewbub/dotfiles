@@ -44,7 +44,9 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- minimal num of screen lines to keep above and below the curosr
-vim.o.scrolloff = 10 
+vim.o.scrolloff = 10
+
+ 
 
 -- tab settings
 vim.opt.tabstop = 2
@@ -54,3 +56,9 @@ vim.opt.expandtab = true
 
 -- clear highlights on search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- override Shift+Up/Down to move 6 lines instead of page up/down
+vim.keymap.set({'n', 'i'}, '<S-Up>', '<C-o>6k', { desc = 'Move up 6 lines' })
+vim.keymap.set({'n', 'i'}, '<S-Down>', '<C-o>6j', { desc = 'Move down 6 lines' })
+vim.keymap.set('n', '<S-Up>', '6k', { desc = 'Move up 6 lines' })
+vim.keymap.set('n', '<S-Down>', '6j', { desc = 'Move down 6 lines' })
