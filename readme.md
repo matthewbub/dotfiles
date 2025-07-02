@@ -1,5 +1,8 @@
 # readme 
 
+<img width="1613" alt="screenshot" src="https://github.com/user-attachments/assets/ceef90b9-b072-4196-9923-192ca32a8812" />
+
+
 
 ## Cloning
 
