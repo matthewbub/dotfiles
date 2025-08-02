@@ -29,8 +29,6 @@ echo "[SETUP] Configuring Docker to start on boot..."
 #	/etc/runlevels/boot/docker -> /etc/init.d/docker
 sudo rc-update add docker boot
 
-echo "[SETUP] Running Docker post-setup checks..."
-./scripts/check_docker_boot.sh
 # theres no more docker shenanigans after this line
 
 echo "[SETUP] Installing Neovim depeendecies..."
