@@ -1,0 +1,6 @@
+alias ls='ls -1'
+alias lsa='ls -1 -a'
+alias v='nvim'
+alias vim='nvim'
+
+export PATH="$HOME/.local/share/nvim/lazy-rocks/bin:$PATH"
