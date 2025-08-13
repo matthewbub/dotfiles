@@ -48,6 +48,13 @@ require("lazy").setup({
   require("plugins.tailwind-tools"),
   require("plugins.conform"),
   require("plugins.nvim-lint"),
+  require("plugins.lualine"),
+  require("plugins.autotag"),
+  require("plugins.comment"),
+  require("plugins.colorizer"),
+  require("plugins.treesitter_context"),
+  require("plugins.indent_blankline"),
+  require("plugins.trouble"),
   "NMAC427/guess-indent.nvim",
 	checker = { enabled = true },
 })

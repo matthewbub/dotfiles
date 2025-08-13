@@ -3,4 +3,9 @@ alias lsa='ls -1 -a'
 alias v='nvim'
 alias vim='nvim'
 
+# Linux only (enabled by default on Mac)
+## Enable prefix-based history search with arrow keys
+## bind '"\e[A": history-search-backward'
+## bind '"\e[B": history-search-forward'
+
 export PATH="$HOME/.local/share/nvim/lazy-rocks/bin:$PATH"

@@ -8,6 +8,8 @@ return {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
+      -- JSON Schemas for jsonls
+      'b0o/schemastore.nvim',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
@@ -195,7 +197,27 @@ return {
         },
         pyright = {},
         rust_analyzer = {},
-        ts_ls = {},
+        -- Prefer Vtsls over tsserver for TS/JS projects
+        vtsls = {},
+        -- LSP for linting and fixes from ESLint
+        eslint = {},
+        -- JSON with schema support
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
+        -- CSS/SCSS/LESS language server
+        cssls = {
+          settings = { css = { validate = true }, less = { validate = true }, scss = { validate = true } },
+        },
+        -- Emmet for HTML/JSX/TSX expansions
+        emmet_ls = {
+          filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+        },
         lua_ls = { settings = { Lua = { completion = { callSnippet = 'Replace' } } } },
       }
       
@@ -206,6 +228,8 @@ return {
         'goimports',
         'golangci-lint',
         'delve',
+        -- Web formatters
+        'prettierd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
