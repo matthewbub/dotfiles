@@ -9,6 +9,14 @@ cd ~/
 git clone https://github.com/matthewbub/dotfiles.git .config
 ```
 
+## On Ubuntu 
+
+```sh
+# neovim must be installed
+cd /home/root/
+root@vultr:/home/root# git clone https://github.com/matthewbub/dotfiles.git .config
+```
+
 ## Scripts
 
 1. ./MacOS.sh - installs the core shit that i need on a Macbook
