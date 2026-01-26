@@ -198,9 +198,27 @@ return {
         pyright = {},
         rust_analyzer = {},
         -- Prefer Vtsls over tsserver for TS/JS projects
-        vtsls = {},
-        -- LSP for linting and fixes from ESLint
-        eslint = {},
+        vtsls = {
+          settings = {
+            vtsls = {
+              experimental = {
+                completion = {
+                  enableServerSideFuzzyMatch = true,
+                },
+              },
+            },
+            typescript = {
+              validate = { enable = true },
+            },
+            javascript = {
+              validate = { enable = true },
+            },
+            eslint = {
+              enable = false,
+            },
+          },
+        },
+
         -- JSON with schema support
         jsonls = {
           settings = {
@@ -245,6 +263,8 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+          -- Disable eslint_lsp - causes circular JSON errors with flat config + react plugin
+          eslint = function() end,
         },
       }
     end,

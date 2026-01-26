@@ -57,6 +57,12 @@ vim.opt.expandtab = true
 -- clear highlights on search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- move current line up/down (like VSCode Alt+Up/Down)
+vim.keymap.set('n', '<D-j>', '<cmd>m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<D-k>', '<cmd>m .-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('i', '<D-j>', '<cmd>m .+1<CR>==gi', { desc = 'Move line down' })
+vim.keymap.set('i', '<D-k>', '<cmd>m .-2<CR>==gi', { desc = 'Move line up' })
+
 -- override Shift+Up/Down to move 6 lines instead of page up/down
 vim.keymap.set({'n', 'i'}, '<S-Up>', '<C-o>6k', { desc = 'Move up 6 lines' })
 vim.keymap.set({'n', 'i'}, '<S-Down>', '<C-o>6j', { desc = 'Move down 6 lines' })
