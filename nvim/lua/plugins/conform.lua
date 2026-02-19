@@ -3,10 +3,10 @@ return {
   opts = {
     formatters_by_ft = {
       go = { 'gofumpt', 'goimports' },
-      javascript = { 'prettierd', 'prettier' },
-      javascriptreact = { 'prettierd', 'prettier' },
-      typescript = { 'prettierd', 'prettier' },
-      typescriptreact = { 'prettierd', 'prettier' },
+      javascript = { 'eslint_d', 'prettierd', 'prettier' },
+      javascriptreact = { 'eslint_d', 'prettierd', 'prettier' },
+      typescript = { 'eslint_d', 'prettierd', 'prettier' },
+      typescriptreact = { 'eslint_d', 'prettierd', 'prettier' },
       json = { 'prettierd', 'prettier' },
       jsonc = { 'prettierd', 'prettier' },
       css = { 'prettierd', 'prettier' },

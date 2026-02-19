@@ -248,6 +248,9 @@ return {
         'delve',
         -- Web formatters
         'prettierd',
+        'eslint_d',
+        -- Web LSPs
+        'tailwindcss-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

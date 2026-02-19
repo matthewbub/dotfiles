@@ -73,6 +73,8 @@ return {
     -- Telescope keymaps
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    vim.keymap.set({ 'n', 'i' }, '<C-p>', builtin.find_files, { desc = 'Search files (Ctrl+P)' })
+    vim.keymap.set({ 'n', 'i' }, '<D-P>', builtin.find_files, { desc = 'Search files (Command+Shift+P)' })
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })

@@ -62,6 +62,10 @@ vim.keymap.set('n', '<D-j>', '<cmd>m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<D-k>', '<cmd>m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('i', '<D-j>', '<cmd>m .+1<CR>==gi', { desc = 'Move line down' })
 vim.keymap.set('i', '<D-k>', '<cmd>m .-2<CR>==gi', { desc = 'Move line up' })
+vim.keymap.set('x', '<D-Up>', ":move '<-2<CR>gv=gv", { desc = 'Move selection up' })
+vim.keymap.set('x', '<D-Down>', ":move '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('x', '<C-Up>', ":move '<-2<CR>gv=gv", { desc = 'Move selection up' })
+vim.keymap.set('x', '<C-Down>', ":move '>+1<CR>gv=gv", { desc = 'Move selection down' })
 
 -- override Shift+Up/Down to move 6 lines instead of page up/down
 vim.keymap.set({'n', 'i'}, '<S-Up>', '<C-o>6k', { desc = 'Move up 6 lines' })
