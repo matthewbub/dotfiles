@@ -1,0 +1,31 @@
+nvim/lua/plugins/mason.lua
+  c0bc905dc1c32775 251-253
+nvim/lua/config/options.lua
+  c0bc905dc1c32775 65-68
+nvim/lua/plugins/nvim-lint.lua
+  c0bc905dc1c32775 7-10
+nvim/lua/plugins/telescope.lua
+  c0bc905dc1c32775 76-77
+nvim/lua/plugins/conform.lua
+  c0bc905dc1c32775 6-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "8f1d14d490e87c223472473161c4bd40ef3a9421",
+  "prompts": {
+    "c0bc905dc1c32775": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c6f89-a012-71c3-b877-cf32a69bdce6",
+        "model": "unknown"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 176,
+      "total_deletions": 8,
+      "accepted_lines": 176,
+      "overriden_lines": 0
+    }
+  }
+}
