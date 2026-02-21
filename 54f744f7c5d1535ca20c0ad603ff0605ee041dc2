@@ -1,0 +1,92 @@
+nvim/colors/vanta_black.lua
+  9fa0b75fddecac9a 18,20,85-87,90,95-96
+  2458a35d8b7eebff 16-17,55,57,61,65,70-77,91-94
+  59517440fc2ac2c0 19,21-23,25-26,56,62-64,66
+nvim/lua/config/options.lua
+  3782fb47994eaa5d 75-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "54f744f7c5d1535ca20c0ad603ff0605ee041dc2",
+  "prompts": {
+    "2458a35d8b7eebff": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_381bb1fcbffetfR8yPU9GvQJKx",
+        "model": "opencode/minimax-m2.5-free"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 54,
+      "total_deletions": 54,
+      "accepted_lines": 18,
+      "overriden_lines": 0
+    },
+    "3782fb47994eaa5d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7e3d-690a-7572-a271-46780abeca14",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 0,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    },
+    "59517440fc2ac2c0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7eb4-c75b-7373-b824-d2a49f37e21b",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 12,
+      "total_deletions": 10,
+      "accepted_lines": 11,
+      "overriden_lines": 0
+    },
+    "944ada55ca8f834f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7494-f434-7833-aae4-30c0c003e743",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 37,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "9fa0b75fddecac9a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7eb5-ecfb-7681-a1ef-3e915d996639",
+        "model": "unknown"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 9,
+      "total_deletions": 7,
+      "accepted_lines": 8,
+      "overriden_lines": 0
+    },
+    "a270aa532a0a5b2e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7e4c-45a4-7b41-b6dd-a45e657ba165",
+        "model": "gpt-5.3-codex-spark"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
