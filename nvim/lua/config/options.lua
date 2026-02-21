@@ -72,3 +72,6 @@ vim.keymap.set({'n', 'i'}, '<S-Up>', '<C-o>6k', { desc = 'Move up 6 lines' })
 vim.keymap.set({'n', 'i'}, '<S-Down>', '<C-o>6j', { desc = 'Move down 6 lines' })
 vim.keymap.set('n', '<S-Up>', '6k', { desc = 'Move up 6 lines' })
 vim.keymap.set('n', '<S-Down>', '6j', { desc = 'Move down 6 lines' })
+
+-- Load custom local colorscheme generated from Vanta Black palette.
+vim.cmd.colorscheme("vanta_black")

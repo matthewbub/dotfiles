@@ -26,7 +26,14 @@ return {
 
     require('lualine').setup({
       options = {
-        theme = 'auto',
+        theme = {
+          normal = { a = { fg = "#0d0d0d", bg = "#ececec", gui = "bold" }, b = { fg = "#ececec", bg = "#1a1a1a" }, c = { fg = "#cecece", bg = "#141414" } },
+          insert = { a = { fg = "#0d0d0d", bg = "#cecece", gui = "bold" }, b = { fg = "#ececec", bg = "#1a1a1a" }, c = { fg = "#cecece", bg = "#141414" } },
+          visual = { a = { fg = "#0d0d0d", bg = "#cecece", gui = "bold" }, b = { fg = "#ececec", bg = "#1a1a1a" }, c = { fg = "#cecece", bg = "#141414" } },
+          replace = { a = { fg = "#0d0d0d", bg = "#cecece", gui = "bold" }, b = { fg = "#ececec", bg = "#1a1a1a" }, c = { fg = "#cecece", bg = "#141414" } },
+          command = { a = { fg = "#0d0d0d", bg = "#cecece", gui = "bold" }, b = { fg = "#ececec", bg = "#1a1a1a" }, c = { fg = "#cecece", bg = "#141414" } },
+          inactive = { a = { fg = "#9b9b9b", bg = "#141414" }, b = { fg = "#9b9b9b", bg = "#141414" }, c = { fg = "#9b9b9b", bg = "#141414" } },
+        },
         globalstatus = true,
         icons_enabled = true,
       },

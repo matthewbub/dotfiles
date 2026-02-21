@@ -26,7 +26,7 @@ return {
         tab_size = 28,
         diagnostics = "nvim_lsp",
         diagnostics_update_in_insert = false,
-        color_icons = true,
+        color_icons = false,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_close_icon = true,
@@ -68,7 +68,7 @@ return {
           items = {
             {
               name = "Tests",
-              highlight = {underline = true, sp = "blue"},
+              highlight = { underline = true, sp = "#8d8d8d" },
               priority = 2,
               icon = "",
               matcher = function(buf)
@@ -77,127 +77,13 @@ return {
             },
             {
               name = "Docs",
-              highlight = {underline = true, sp = "green"},
+              highlight = { underline = true, sp = "#8d8d8d" },
               auto_close = false,
               matcher = function(buf)
                 return buf.name:match("%.md") or buf.name:match("%.txt")
               end,
             },
           },
-        },
-      },
-      highlights = {
-        fill = {
-          fg = "#1e1e2e",
-          bg = "#1e1e2e",
-        },
-        background = {
-          fg = "#6c7086",
-          bg = "#1e1e2e",
-        },
-        buffer_visible = {
-          fg = "#cdd6f4",
-          bg = "#313244",
-        },
-        buffer_selected = {
-          fg = "#cdd6f4",
-          bg = "#45475a",
-          bold = true,
-          italic = true,
-        },
-        tab_selected = {
-          fg = "#cdd6f4",
-          bg = "#45475a",
-        },
-        tab_separator_selected = {
-          fg = "#45475a",
-          bg = "#45475a",
-        },
-        close_button = {
-          fg = "#6c7086",
-          bg = "#1e1e2e",
-        },
-        close_button_visible = {
-          fg = "#cdd6f4",
-          bg = "#313244",
-        },
-        close_button_selected = {
-          fg = "#f38ba8",
-          bg = "#45475a",
-        },
-        numbers = {
-          fg = "#6c7086",
-          bg = "#1e1e2e",
-        },
-        numbers_visible = {
-          fg = "#cdd6f4",
-          bg = "#313244",
-        },
-        numbers_selected = {
-          fg = "#fab387",
-          bg = "#45475a",
-          bold = true,
-        },
-        indicator_selected = {
-          fg = "#89b4fa",
-          bg = "#45475a",
-        },
-        modified = {
-          fg = "#f9e2af",
-          bg = "#1e1e2e",
-        },
-        modified_visible = {
-          fg = "#f9e2af",
-          bg = "#313244",
-        },
-        modified_selected = {
-          fg = "#f9e2af",
-          bg = "#45475a",
-        },
-        duplicate_selected = {
-          fg = "#cdd6f4",
-          bg = "#45475a",
-          italic = true,
-        },
-        duplicate_visible = {
-          fg = "#cdd6f4",
-          bg = "#313244",
-          italic = true,
-        },
-        duplicate = {
-          fg = "#6c7086",
-          bg = "#1e1e2e",
-          italic = true,
-        },
-        separator_selected = {
-          fg = "#45475a",
-          bg = "#45475a",
-        },
-        separator_visible = {
-          fg = "#313244",
-          bg = "#313244",
-        },
-        separator = {
-          fg = "#1e1e2e",
-          bg = "#1e1e2e",
-        },
-        pick_selected = {
-          fg = "#f38ba8",
-          bg = "#45475a",
-          bold = true,
-          italic = true,
-        },
-        pick_visible = {
-          fg = "#f38ba8",
-          bg = "#313244",
-          bold = true,
-          italic = true,
-        },
-        pick = {
-          fg = "#f38ba8",
-          bg = "#1e1e2e",
-          bold = true,
-          italic = true,
         },
       },
     })
