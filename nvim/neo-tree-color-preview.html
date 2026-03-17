@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neo-tree Color Preview</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --bg-alt: #141414;
+      --bg-panel: #1a1a1a;
+      --bg-visual: #262626;
+      --border: #3a3a3a;
+      --fg: #d4d4d4;
+      --fg-soft: #e8e8e8;
+      --fg-muted: #b0b0b0;
+      --comment: #888888;
+      --subtle: #999999;
+      --white: #ffffff;
+
+      --neotree-file-name: var(--fg);
+      --neotree-git-untracked: var(--comment);
+      --neotree-git-ignored: var(--subtle);
+      --neotree-git-added: var(--fg-muted);
+      --neotree-git-modified: var(--fg-muted);
+      --neotree-git-deleted: var(--fg-muted);
+      --neotree-git-conflict: var(--fg-soft);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 700px at 15% -10%, #1d1d1d 0%, var(--bg) 50%) fixed;
+      color: var(--fg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      padding: 18px;
+    }
+
+    .layout {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      min-height: calc(100vh - 36px);
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+      padding: 14px;
+      overflow: visible;
+    }
+
+    .preview-panel {
+      position: sticky;
+      top: 12px;
+      align-self: start;
+    }
+
+    h1, h2 {
+      margin: 0 0 10px;
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    .sub {
+      color: var(--fg-muted);
+      margin: 0 0 12px;
+      font-size: 13px;
+    }
+
+    .editor-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .row {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+      background: #101010;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .token {
+      font-size: 12px;
+      color: var(--fg-soft);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--comment);
+    }
+
+    input[type="color"] {
+      width: 40px;
+      height: 30px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      width: 92px;
+      height: 30px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #0d0d0d;
+      color: var(--fg);
+      padding: 0 8px;
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    .preview-shell {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #090909;
+      position: sticky;
+      top: 12px;
+      align-self: start;
+    }
+
+    .preview-head {
+      padding: 10px 12px;
+      background: var(--bg-panel);
+      color: var(--fg-soft);
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .tree-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 12px;
+      border-bottom: 1px solid #151515;
+      white-space: nowrap;
+    }
+
+    .tree-row:last-child { border-bottom: none; }
+    .icon { color: var(--fg-muted); width: 16px; text-align: center; }
+    .status {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--comment);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 1px 8px;
+      background: #111;
+    }
+
+    .tracked { color: var(--neotree-file-name); }
+    .untracked { color: var(--neotree-git-untracked); }
+    .ignored { color: var(--neotree-git-ignored); }
+    .added { color: var(--neotree-git-added); }
+    .modified { color: var(--neotree-git-modified); }
+    .deleted { color: var(--neotree-git-deleted); }
+    .conflict { color: var(--neotree-git-conflict); }
+
+    .mini {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      color: var(--fg-muted);
+      font-size: 12px;
+      background: #101010;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <section class="panel preview-panel">
+      <h1>Editable Tokens</h1>
+      <p class="sub">Left side edits color values. Right side updates live.</p>
+
+      <h2>Core Palette</h2>
+      <div class="editor-list" id="palette-editor"></div>
+
+      <h2 style="margin-top:14px;">Neo-tree Status Colors</h2>
+      <div class="editor-list" id="status-editor"></div>
+    </section>
+
+    <section class="panel">
+      <h1>Side-by-side Preview</h1>
+      <p class="sub">Focus values: tracked, untracked, and ignored file names.</p>
+
+      <div class="preview-shell">
+        <div class="preview-head">File Explorer</div>
+        <div class="tree-row"><span class="icon">📄</span><span class="tracked">layout.tsx</span><span class="status">tracked · NeoTreeFileName</span></div>
+        <div class="tree-row"><span class="icon">📁</span><span class="untracked">new-folder/</span><span class="status">untracked · NeoTreeGitUntracked</span></div>
+        <div class="tree-row"><span class="icon">📄</span><span class="ignored">.DS_Store</span><span class="status">ignored · NeoTreeGitIgnored</span></div>
+        <div class="tree-row"><span class="icon">📄</span><span class="added">new-feature.ts</span><span class="status">added · NeoTreeGitAdded</span></div>
+        <div class="tree-row"><span class="icon">📄</span><span class="modified">README.md</span><span class="status">modified · NeoTreeGitModified</span></div>
+        <div class="tree-row"><span class="icon">📄</span><span class="deleted">old-script.sh</span><span class="status">deleted · NeoTreeGitDeleted</span></div>
+        <div class="tree-row"><span class="icon">📄</span><span class="conflict">package-lock.json</span><span class="status">conflict · NeoTreeGitConflict</span></div>
+      </div>
+
+      <div class="mini">
+        Current config mapping in <code>/Users/hi-matbub/.config/nvim/colors/dark_oats.lua</code>:
+        <br />
+        <code>NeoTreeFileName = fg</code>,
+        <code>NeoTreeGitUntracked = comment</code>,
+        <code>NeoTreeGitIgnored = (fallback unless explicitly set)</code>.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+
+    const palette = [
+      ["--bg", "bg"],
+      ["--bg-alt", "bg_alt"],
+      ["--bg-panel", "bg_panel"],
+      ["--bg-visual", "bg_visual"],
+      ["--border", "border"],
+      ["--fg", "fg"],
+      ["--fg-soft", "fg_soft"],
+      ["--fg-muted", "fg_muted"],
+      ["--comment", "comment"],
+      ["--subtle", "subtle"],
+      ["--white", "white"]
+    ];
+
+    const status = [
+      ["--neotree-file-name", "NeoTreeFileName", "tracked"],
+      ["--neotree-git-untracked", "NeoTreeGitUntracked", "untracked"],
+      ["--neotree-git-ignored", "NeoTreeGitIgnored", "ignored"],
+      ["--neotree-git-added", "NeoTreeGitAdded", "added"],
+      ["--neotree-git-modified", "NeoTreeGitModified", "modified"],
+      ["--neotree-git-deleted", "NeoTreeGitDeleted", "deleted"],
+      ["--neotree-git-conflict", "NeoTreeGitConflict", "conflict"]
+    ];
+
+    function getColor(variable) {
+      return getComputedStyle(root).getPropertyValue(variable).trim();
+    }
+
+    function isHex(v) {
+      return /^#([0-9a-fA-F]{6})$/.test(v);
+    }
+
+    function makeEditorRow([variable, label, note], target) {
+      const row = document.createElement("div");
+      row.className = "row";
+
+      const left = document.createElement("div");
+      left.innerHTML = `<div class="token">${label}</div>${note ? `<div class="note">${note}</div>` : ""}`;
+
+      const picker = document.createElement("input");
+      picker.type = "color";
+
+      const hex = document.createElement("input");
+      hex.type = "text";
+
+      const current = getColor(variable);
+      const safe = isHex(current) ? current : "#888888";
+      picker.value = safe;
+      hex.value = safe;
+
+      function apply(val) {
+        const lower = val.toLowerCase();
+        if (!isHex(lower)) return;
+        root.style.setProperty(variable, lower);
+        picker.value = lower;
+        hex.value = lower;
+      }
+
+      picker.addEventListener("input", (e) => apply(e.target.value));
+      hex.addEventListener("change", (e) => apply(e.target.value.trim()));
+
+      row.appendChild(left);
+      row.appendChild(picker);
+      row.appendChild(hex);
+      target.appendChild(row);
+    }
+
+    const paletteEditor = document.getElementById("palette-editor");
+    const statusEditor = document.getElementById("status-editor");
+
+    palette.forEach((item) => makeEditorRow([item[0], item[1], ""], paletteEditor));
+    status.forEach((item) => makeEditorRow(item, statusEditor));
+  </script>
+</body>
+</html>

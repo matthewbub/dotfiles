@@ -75,3 +75,5 @@ vim.keymap.set('n', '<S-Down>', '6j', { desc = 'Move down 6 lines' })
 
 -- Load custom local colorscheme generated from Dark Oats palette.
 vim.cmd.colorscheme("dark_oats")
+
+require("config.theme_tools").setup()
