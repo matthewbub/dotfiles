@@ -1,0 +1,60 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "3535cefae7b083416257b8fc7a066011a5a0b98c",
+  "prompts": {
+    "10f0f83c5b82aafb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019cf56f-193c-7291-818f-b47576ee3058",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    },
+    "6b106f5a1403945d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019cc297-d5f9-7ae3-bb10-8fef49e488ae",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    },
+    "a524df0349b2d55b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7f53-daa5-70c1-8cc7-67ce7340970d",
+        "model": "gpt-5.3-codex"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "d89ec69a5da894da": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019c7f56-7b33-74c3-ae7d-80f0463fbd1a",
+        "model": "unknown"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 298,
+      "overriden_lines": 0
+    }
+  }
+}
