@@ -1,0 +1,55 @@
+[
+  // explorer
+  {
+    "key": "ctrl+1",
+    "command": "workbench.view.explorer",
+    "when": "!sideBarVisible"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarVisible"
+  },
+
+  // terminal
+  {
+    "key": "ctrl+1",
+    "command": "-workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+
+  // chat
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+
+  // git - stage
+  {
+    "key": "shift+cmd+s",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+
+  // git - unstage
+  {
+    "key": "shift+cmd+u",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+
+  // git - revert
+  {
+    "key": "shift+cmd+r",
+    "command": "git.revertSelectedRanges",
+    "when": "isInDiffEditor && !operationInProgress"
+  }
+]
