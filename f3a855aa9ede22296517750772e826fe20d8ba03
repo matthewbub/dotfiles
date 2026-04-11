@@ -1,0 +1,36 @@
+nvim/lua/plugins/mason.lua
+  61e4937be37be28b 43,53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "f3a855aa9ede22296517750772e826fe20d8ba03",
+  "prompts": {
+    "10f0f83c5b82aafb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019cf56f-193c-7291-818f-b47576ee3058",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo!",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 37,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "61e4937be37be28b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d7b02-07bf-7f31-a395-a3e97bce7657",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo!",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}
