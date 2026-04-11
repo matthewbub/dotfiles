@@ -40,6 +40,7 @@ return {
           map('<leader>la', vim.lsp.buf.code_action, '[L]SP Code [A]ction', { 'n', 'x' })
 
           -- Find references for the word under your cursor.
+          map('gr', require('telescope.builtin').lsp_references, 'Goto [R]eferences')
           map('<leader>lR', require('telescope.builtin').lsp_references, '[L]SP [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
@@ -49,6 +50,7 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
+          map('gd', require('telescope.builtin').lsp_definitions, 'Goto [D]efinition')
           map('<leader>ld', require('telescope.builtin').lsp_definitions, '[L]SP [D]efinition')
           
           -- Jump back from definition (alternative to <C-t>)
