@@ -6,4 +6,10 @@ simple-update-notifier/
 zed/
 stripe
 herd-lite
-
+.DS_Store
+cmux/
+gh/hosts.yml
+codesandbox/bin/
+soloterm/
+opencode/package-lock.json
+opencode/plugins/git-ai.ts
