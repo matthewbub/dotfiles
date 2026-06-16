@@ -1,0 +1,47 @@
+git/ignore
+  10f0f83c5b82aafb 1
+.gitignore
+  s_0a960f382ce464::t_b6e0b4b2c96c80 10
+  s_0a960f382ce464::t_dd9d6713606f8f 9,11-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "789c5db7d0bcde8e7f9f32c0947f87c201b4cc05",
+  "prompts": {
+    "10f0f83c5b82aafb": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019cf56f-193c-7291-818f-b47576ee3058",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo!",
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    },
+    "61e4937be37be28b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019d7b02-07bf-7f31-a395-a3e97bce7657",
+        "model": "gpt-5.4"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_0a960f382ce464": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_13123f2b7ffeQWL480Q1HZtPWm",
+        "model": "gpt-5.5-fast"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>"
+    }
+  }
+}
